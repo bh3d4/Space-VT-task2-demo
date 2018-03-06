@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Space@VT demo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link href="./style.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+	<h1>Space@VT task2 demo by Tivcrmn</h1>
+
+	<h2>Analyzing Interplanetary Magnetic Field (IMF) data from OMNI. <span style="color: red">in 2017</span></h2>
+
+	<p style="width: 800px;">
+		IMF is the Sun’s magnetic field carried by the solarwind into the interplanetary space. IMF plays an important role in transferring energy into the Earth’s atmosphere and generating the northern lights (aurora). IMF data is available for download from NASA’s OMNI database.
+		<br>
+		Students can work on a variety of demo projects using IMF. 
+		<br> 
+		For example:
+		<br>
+		1. develop a real time IMF monitoring tool.
+		<br>
+		2. develop visualizations of IMF data.
+	</p>
+
+	<div class="app">
+		<div class="row">
+			<div class="col-lg-4 pl30 mt40">
+				<div class="wrapForm">
+					<h5>1. Choose the element you want to show in canvas</h5>
+					<select name="elements" v-model="element">
+						<option value="HeliographicInertialLatitudeoftheEarth">HeliographicInertialLatitudeoftheEarth</option>
+						<option value="HeliographicInertialLongitudeoftheEarth">HeliographicInertialLongitudeoftheEarth</option>
+						<option value="BR_RTN">BR_RTN</option>
+						<option value="BT_RTN">BT_RTN</option>
+						<option value="BN_RTN">BN_RTN</option>
+						<option value="FieldMagnitudeAverage">FieldMagnitudeAverage</option>
+						<option value="BulkFlowspeed">BulkFlowspeed</option>
+						<option value="THETA">THETA</option>
+						<option value="PHI">PHI</option>
+						<option value="IONDensity">IONDensity</option>
+						<option value="Temperature">Temperature</option>
+					</select>
+				</div>
+				
+				<div class="wrapForm">
+					<h5>2. Choose timeSpan</h5>
+					<div>
+						<select name="timespan" v-model="timespan">
+							<option value="day">day</option>
+							<option value="month">month</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="wrapForm">
+					<h5>3. Choose whether to compare</h5>
+					<select name="compare" v-model="compare">
+						<option value="false">single</option>
+					</select>
+					
+					<input v-model="time1" placeholder="decimal day or month">
+					<p class="red">The valid decimal day should between 1 to 365 and the valid month should between 1 to 12</p>	
+					<input v-model="time2" v-if="compare == 'true'" placeholder="decimal day or month">
+
+					<button @click="fetch()">fetch</button>
+				</div>
+
+				<p style="margin-top: 30px;">git repo: <a href="https://github.com/Tivcrmn/Space-VT-task2-demo" target="_blank">https://github.com/Tivcrmn/Space-VT-task2-demo</a></p>
+				<p><a href="https://github.com/Tivcrmn/Space-VT-task2-demo/blob/master/omni_m2017.dat" target="_blank">The original IMF data in 2017</a></p>
+				<p>Author <a href="https://github.com/Tivcrmn" target="_blank">@Tivcrmn</a> in BUPT</p>
+				<p><a href="https://drive.google.com/file/d/16hG-VSh8BJpO8yVSe4AxLBTDq-uAjWEv/view?usp=sharing" target="_blank">My CV</a></p>
+				
+			</div>
+
+			<div class="col-lg-8 pr20">
+				<p v-show="loading && timespan == 'day'" style="font-size: 30px">Loading.......</p>
+				<p v-show="loading && timespan == 'month'" style="font-size: 30px">Loading.......Retrieve the data of a month need more time。。。</p>
+				<canvas id="myChart" v-show="!loading"></canvas>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+	<script src="app.js"></script>
+
+</body>
+</html>
