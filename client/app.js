@@ -22,7 +22,7 @@ var app = new Vue({
         return
       }
       this.loading = true
-      this.$http.get('http://localhost:5000/api/v1/imfdata', {params: params}).then(res => {
+      this.$http.get('http://ec2-54-186-112-54.us-west-2.compute.amazonaws.com//api/v1/imfdata', {params: params}).then(res => {
         var data = res.body.data
         var temp = this.processData(data)
         this.drawCanvas(temp)
