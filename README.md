@@ -42,9 +42,9 @@ The features which have been finished
 }
 ```
  
-[Live Demo](https://github.com/Tivcrmn/Tivcrmn.github.io/blob/master/demo/client/index.html)
+[Live Demo](http://tivarea.top/demo/client/index.html)
 
-![](http://oz2vajvam.bkt.clouddn.com/space@vt_demo.png)
+![](http://oz2vajvam.bkt.clouddn.com/space@vt_newdemo.png)
 
 ### Architecture
 
