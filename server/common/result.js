@@ -3,7 +3,7 @@ export default arg => {
   let res = {
     success: true,
     error: null,
-    data: 123,
+    data: null,
     code: 0
   }
   return merge(res, arg)

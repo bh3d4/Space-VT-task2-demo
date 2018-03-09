@@ -1,6 +1,6 @@
 # Space@VT task2 demo by Tivcrmn
 
-## Analyzing Interplanetary Magnetic Field (IMF) data from OMNI. in 2017
+## Analyzing Interplanetary Magnetic Field (IMF) data from OMNI. from 2011 to 2017
 
 IMF is the Sun’s magnetic field carried by the solarwind into the interplanetary space. 
 IMF plays an important role in transferring energy into the Earth’s atmosphere and generating the northern lights (aurora). 
@@ -16,10 +16,7 @@ For example:
 The features which have been finished
 
  - Show a certain element in the canvas in a day or in a month
-
-Still need to improve
-
- - Compare a certain element in the canvas in two or more days or months
+ - Compare a certain element in the canvas in some days or months
 
 ### IMF data in MongoDB documents 
 
@@ -28,6 +25,7 @@ Still need to improve
     "_id" : ObjectId("5a98c57828280a0e510bbeff"),
     "Year" : 2017,
     "DecimalDay" : 1,
+    "Month" : 1,
     "Hour" : 0,
     "HeliographicInertialLatitudeoftheEarth" : -2.9,
     "HeliographicInertialLongitudeoftheEarth" : 23.5,

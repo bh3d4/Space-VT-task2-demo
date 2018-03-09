@@ -4,6 +4,7 @@ let ImfSchema = new Schema({
 	Year: Number,
 	DecimalDay: Number,
 	Hour: Number,
+	Month: Number,
 	HeliographicInertialLatitudeoftheEarth: Number,
 	HeliographicInertialLongitudeoftheEarth: Number,
 	BR_RTN: Number,
@@ -17,6 +18,6 @@ let ImfSchema = new Schema({
 	Temperature: Number,
 })
 
-let imfModel = mongoose.model('ImfModel', ImfSchema)
+let ImfModel = mongoose.model('new_ImfModel', ImfSchema)
 
-export default imfModel
+export default ImfModel

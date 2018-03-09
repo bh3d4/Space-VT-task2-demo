@@ -5,12 +5,52 @@
 .pl30 {
 	padding-left: 30px; 
 }
+.ml10 {
+	margin-left: 10px; 
+}
+.ml60 {
+	margin-left: 120px; 
+}
+.mb10 {
+	margin-bottom: 10px;
+}
+.mb50 {
+	margin-bottom: 50px;
+}
 .mt40 {
 	margin-top: 40px;
+}
+.mt30 {
+	margin-top: 30px;
 }
 .pr20 {
 	padding-right: 20px;
 }
+.fs30 {
+	font-size: 30px;
+}
 .red {
 	color: red;
 }
+.blue {
+	color: blue;
+}
+.gray {
+	color: gray;
+}
+.rules {
+	margin: 0px 10px;
+}
+.btn {
+	width: 120px;
+	text-align: center;
+	line-height: 20px;
+	position: relative;
+	cursor: pointer;
+	background: #44bbff;
+	color: #FFFFFF;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+ }

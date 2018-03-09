@@ -7,27 +7,48 @@
 	<link href="./style.css" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
+
 	<h1>Space@VT task2 demo by Tivcrmn</h1>
+	<h2>Analyzing Interplanetary Magnetic Field (IMF) data from OMNI. <span class="red">from 2011 to 2017</span></h2>
+	<div class="row">
+		<div class="col-lg-8">
+			<p style="width: 800px;">
+				IMF is the Sun’s magnetic field carried by the solarwind into the interplanetary space. IMF plays an important role in transferring energy into the Earth’s atmosphere and generating the northern lights (aurora). IMF data is available for download from NASA’s OMNI database.
+				<br>
+				Students can work on a variety of demo projects using IMF. 
+				<br> 
+				For example:
+				<br>
+				1. develop a real time IMF monitoring tool.
+				<br>
+				2. develop visualizations of IMF data.
+			</p>
+		</div>
+		<div class="col-lg-4">
+			<p>git repo: <a href="https://github.com/Tivcrmn/Space-VT-task2-demo" target="_blank">https://github.com/Tivcrmn/Space-VT-task2-demo</a></p>
+			<p><a href="https://github.com/Tivcrmn/Space-VT-task2-demo/blob/master/IMF_DATA" target="_blank">The original IMF data from 2011 to 2017</a></p>
+			<p>Author <a href="https://github.com/Tivcrmn" target="_blank">@Tivcrmn</a> in BUPT</p>
+			<p><a href="https://drive.google.com/file/d/16hG-VSh8BJpO8yVSe4AxLBTDq-uAjWEv/view?usp=sharing" target="_blank">My CV</a></p>
+		</div>
+	</div>
+	
 
-	<h2>Analyzing Interplanetary Magnetic Field (IMF) data from OMNI. <span style="color: red">in 2017</span></h2>
-
-	<p style="width: 800px;">
-		IMF is the Sun’s magnetic field carried by the solarwind into the interplanetary space. IMF plays an important role in transferring energy into the Earth’s atmosphere and generating the northern lights (aurora). IMF data is available for download from NASA’s OMNI database.
-		<br>
-		Students can work on a variety of demo projects using IMF. 
-		<br> 
-		For example:
-		<br>
-		1. develop a real time IMF monitoring tool.
-		<br>
-		2. develop visualizations of IMF data.
-	</p>
-
-	<div class="app">
+	<div class="app mb50">
 		<div class="row">
 			<div class="col-lg-4 pl30 mt40">
+
 				<div class="wrapForm">
-					<h5>1. Choose the element you want to show in canvas</h5>
+					<h5>1. Choose timeSpan</h5>
+					<div>
+						<select name="timespan" v-model="timespan">
+							<option value="day">day</option>
+							<option value="month">month</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="wrapForm">
+					<h5>2. Choose the element you want to show in canvas</h5>
 					<select name="elements" v-model="element">
 						<option value="HeliographicInertialLatitudeoftheEarth">HeliographicInertialLatitudeoftheEarth</option>
 						<option value="HeliographicInertialLongitudeoftheEarth">HeliographicInertialLongitudeoftheEarth</option>
@@ -42,49 +63,49 @@
 						<option value="Temperature">Temperature</option>
 					</select>
 				</div>
-				
+
 				<div class="wrapForm">
-					<h5>2. Choose timeSpan</h5>
-					<div>
-						<select name="timespan" v-model="timespan">
-							<option value="day">day</option>
-							<option value="month">month</option>
-						</select>
+					<h5>3. Enter the time you want to compare</h5>
+					<div class="rules">
+						<h5 class="red">Input Rules:</h5>each time period should be a format string as an element in an array, and use '|' as a divider!
+						<br>
+						Day as the timespan, the string should be <span class="red">'Year-DecimalDay'</span>
+						<br>
+						Month as the timespan, the string should be <span class="red">'Year-Month'</span>
+						<br>
+						For example, <br>
+						<strong>if you choose month as the timespan,</strong><br>
+						<span class="blue">2017-1</span> means <span class="red">january in 2017</span><br>
+						<span class="blue">2017-1|2018-3</span> means <span class="red">january in 2017 and march in 2018</span><br>
+						<strong>if you choose day as the timespan,</strong> <br>
+						<span class="blue">2017-1</span> means <span class="red">the first day in 2017</span><br>
+						<span class="blue">2017-1|2018-3</span> means <span class="red">the first day in 2017 and the third day in 2018</span><br>
 					</div>
-				</div>
-				
-				<div class="wrapForm">
-					<h5>3. Choose whether to compare</h5>
-					<select name="compare" v-model="compare">
-						<option value="false">single</option>
-					</select>
 					
-					<input v-model="time1" placeholder="decimal day or month">
-					<p class="red">The valid decimal day should between 1 to 365 and the valid month should between 1 to 12</p>	
-					<input v-model="time2" v-if="compare == 'true'" placeholder="decimal day or month">
+					<input v-model="time" placeholder="please be careful about the format" class="ml10" style="width: 300px;">
+					<p class="red">The valid decimal day should between 1 to 365(2012 and 2016 is leap year so the last decimalday is 366) and the valid month should between 1 to 12</p>	
 
-					<button @click="fetch()">fetch</button>
+					<button @click="fetch()" class="ml60 mb10 btn">fetch</button>
 				</div>
-
-				<p style="margin-top: 30px;">git repo: <a href="https://github.com/Tivcrmn/Space-VT-task2-demo" target="_blank">https://github.com/Tivcrmn/Space-VT-task2-demo</a></p>
-				<p><a href="https://github.com/Tivcrmn/Space-VT-task2-demo/blob/master/omni_m2017.dat" target="_blank">The original IMF data in 2017</a></p>
-				<p>Author <a href="https://github.com/Tivcrmn" target="_blank">@Tivcrmn</a> in BUPT</p>
-				<p><a href="https://drive.google.com/file/d/16hG-VSh8BJpO8yVSe4AxLBTDq-uAjWEv/view?usp=sharing" target="_blank">My CV</a></p>
-				
 			</div>
 
-			<div class="col-lg-8 pr20">
-				<p v-show="loading && timespan == 'day'" style="font-size: 30px">Loading.......</p>
-				<p v-show="loading && timespan == 'month'" style="font-size: 30px">Loading.......Retrieve the data of a month need more time。。。</p>
+			<div class="col-lg-8 pr20 mt40 mb50">
+				<p v-show="loading && timespan == 'day'" class="fs30">Loading.......</p>
+				<p v-show="loading && timespan == 'month'" class="fs30">Loading.......Retrieve the data of a month need more time。。。</p>
+				<div class="fs30">Line chart for <span class="gray">{{element}}</span> in {{timespan}} timespan</div>
 				<canvas id="myChart" v-show="!loading"></canvas>
 			</div>
 		</div>
 
 	</div>
-
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+	<script>
+		_u = _.noConflict(); // lets call ourselves _u
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+	
 	<script src="app.js"></script>
 
 </body>
