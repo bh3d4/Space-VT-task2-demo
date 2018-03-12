@@ -132,25 +132,25 @@ open the client/index.html
   
  ![](http://oz2vajvam.bkt.clouddn.com/Line%20chart_for_avg_Temperature_in_year-day.jpg)
  
-     1. 2014-13 avg: 602702.54
+    1. 2014-13 avg: 602702.54
 
-     ![](http://oz2vajvam.bkt.clouddn.com/1-2014-13.jpg)
+ ![](http://oz2vajvam.bkt.clouddn.com/1-2014-13.jpg)
 
-     2. 2015-178 avg: 597657.125
+    2. 2015-178 avg: 597657.125
 
-     ![](http://oz2vajvam.bkt.clouddn.com/2-2015-178.jpg)
-     
-     3. 2017-251 avg: 544412.75
+ ![](http://oz2vajvam.bkt.clouddn.com/2-2015-178.jpg)
+ 
+    3. 2017-251 avg: 544412.75
 
-     ![](http://oz2vajvam.bkt.clouddn.com/3-2017-251.jpg)
-     
-     4. 2017-250 avg: 540802
+ ![](http://oz2vajvam.bkt.clouddn.com/3-2017-251.jpg)
+ 
+    4. 2017-250 avg: 540802
 
-     ![](http://oz2vajvam.bkt.clouddn.com/4-2017-250.jpg)
-     
-     5. 2011-149 avg: 505466
+ ![](http://oz2vajvam.bkt.clouddn.com/4-2017-250.jpg)
+ 
+    5. 2011-149 avg: 505466
 
-     ![](http://oz2vajvam.bkt.clouddn.com/5-2011-149.jpg)
+ ![](http://oz2vajvam.bkt.clouddn.com/5-2011-149.jpg)
  
  4. The hottest moment from 2011 to 2017
  
