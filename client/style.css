@@ -54,3 +54,6 @@
 	overflow: hidden;
 	display: inline-block;
  }
+ p {
+ 	margin-bottom: 0
+ }

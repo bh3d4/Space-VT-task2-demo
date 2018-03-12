@@ -15,8 +15,10 @@ For example:
 
 The features which have been finished
 
- - Show a certain element in the canvas in a day or in a month
- - Compare a certain element in the canvas in some days or months
+ - Show a certain element in the canvas in some days based on hour
+ - Show a certain element in the canvas in some months based on day (the number is avg, max or min of the day)
+ - Show a certain element in the canvas in some years based on day or month (the number is avg, max or min of the day or month)
+
 
 ### IMF data in MongoDB documents 
 
@@ -44,8 +46,8 @@ The features which have been finished
  
 [Live Demo](http://tivarea.top/demo/client/index.html)
 
-![](http://oz2vajvam.bkt.clouddn.com/space@vt_newdemo.png)
+![](http://oz2vajvam.bkt.clouddn.com/space@vt.png)
 
 ### Architecture
 
-![](http://oz2vajvam.bkt.clouddn.com/architecture.png)
+![](http://oz2vajvam.bkt.clouddn.com/architecture.jpg)
